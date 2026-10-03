@@ -1,0 +1,43 @@
+#usda 1.0
+(
+    doc = """主な値型の書き方の一覧。
+スキーマに無い属性なので、すべて custom を付けている。"""
+    defaultPrim = "Types"
+    upAxis = "Y"
+    metersPerUnit = 1
+)
+
+def Scope "Types"
+{
+    # スカラー
+    custom bool flag = true
+    custom int count = 3
+    custom float f = 1.5
+    custom double d = 1.5
+    custom half h = 1.5
+
+    # 文字列系
+    custom string text = "自由な文字列"
+    custom token mode = "fast"
+
+    # ベクトル（精度違い）
+    custom half3 h3 = (1, 2, 3)
+    custom float3 f3 = (1, 2, 3)
+    custom double3 d3 = (1, 2, 3)
+
+    # ロール付き（中身は float3 と同じ。意味が付いている）
+    custom color3f col = (1, 0, 0)
+    custom point3f pt = (0, 1, 0)
+    custom vector3f vec = (0, 0, 1)
+    custom normal3f nrm = (0, 1, 0)
+    custom texCoord2f uv = (0.5, 0.5)
+
+    # 行列・クォータニオン
+    custom matrix4d mtx = ((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1))
+    custom quatf rot = (1, 0, 0, 0)
+
+    # 配列は型名の後ろに []
+    custom int[] ints = [1, 2, 3]
+    custom point3f[] pts = [(0, 0, 0), (1, 0, 0), (0, 1, 0)]
+    custom token[] modes = ["a", "b"]
+}

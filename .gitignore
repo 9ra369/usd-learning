@@ -1,0 +1,6 @@
+# tools\render の出力
+renders/
+
+# Python
+__pycache__/
+*.pyc
